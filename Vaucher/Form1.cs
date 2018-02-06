@@ -75,37 +75,7 @@ namespace Vaucher
 
         private void Vaucher_Load(object sender, EventArgs e)
         {
-             bool Form_LoadTrue()
-            {
-                //Данные с целевого компьютера
-                string number = "21";
-
-                //Файл ключа присутствует
-                if (File.Exists("keyfile.dat"))
-                {
-                    if (!DecodeKey(number, "keyfile.dat"))
-                    {
-                        MessageBox.Show("Файл ключа не верный!" + "\n" +
-                                        "Данные скопированы в буфер обмена." + "\n" +
-                                        "Сообщите их разработчику для получения файла ключа!",
-                                        "Регистрация");
-                        Clipboard.SetText(number);
-                        return false;
-                    }
-                }
-                else
-                {
-                    //Файл ключа отсутствует
-                    MessageBox.Show("Файл ключа отсутствует!" + "\n" +
-                                    "Данные скопированы в буфер обмена" + "\n" +
-                                    "Сообщите их разработчику для получения файла ключа!",
-                                    "Регистрация");
-                    Clipboard.SetText(number);
-                    return false;
-                }
-
-                return true;
-            }
+            
         }
 
         private void numeric_ValueChanged(object sender, EventArgs e)
